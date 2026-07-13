@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #faf7f2; /* Warna latte/beige sangat lembut */
+    color: #4a3f35; /* Cokelat gelap mewah untuk kenyamanan membaca */
+    line-height: 1.6;
+}
+
+section {
+    padding: 120px 20px 80px 20px;
+    min-height: 100vh;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    color: #3d3229; /* Deep Mocha */
+    letter-spacing: 1px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #c5a880; /* Champagne Gold */
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(245, 240, 230, 0.9); /* Warm Cream semi-transparan */
+    backdrop-filter: blur(10px); /* Efek kaca buram mewah */
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(74, 63, 53, 0.05);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.nav-logo {
+    color: #3d3229;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #615243; /* Kontras diperbaiki agar terbaca jelas */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #c5a880; /* Berubah jadi warna gold saat di-hover */
+}
+
+/* --- 1. HOME SECTION (Flexbox) --- */
+.hero-section {
+    /* Gradasi mewah dari Cream Mutiara ke Sand Beige */
+    background: linear-gradient(135deg, #fbfaf7 0%, #f3ece0 50%, #e6dac6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3d3229;
+    text-align: center;
+}
+
+.hero-content {
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-image img {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(74, 63, 53, 0.12);
+    margin-bottom: 25px;
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+    color: #3d3229;
+}
+
+.hero-text .highlight {
+    color: #c5a880; /* Aksen Gold mewah pada nama/kata kunci */
+}
+
+.hero-text .motto {
+    font-size: 1.15rem;
+    font-style: italic;
+    margin-bottom: 35px;
+    color: #706051;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #3d3229; /* Tombol utama cokelat gelap premium */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(61, 50, 41, 0.2);
+}
+
+.btn-hero:hover {
+    background-color: #c5a880; /* Berubah menjadi Gold saat ditaruh kursor */
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(197, 168, 128, 0.4);
+}
+
+/* --- 2. ABOUT ME SECTION (Flexbox & Grid) --- */
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-story, .about-education {
+    background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(74, 63, 53, 0.03);
+    border: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+.biodata-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.biodata-list li {
+    margin-bottom: 10px;
+    color: #5c4e40;
+}
+
+.timeline {
+    margin-top: 15px;
+    border-left: 3px solid #c5a880;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    background: #f7f4ee;
+    color: #615243;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid rgba(197, 168, 128, 0.15);
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: #3d3229;
+    color: #fff;
+    border-color: #3d3229;
+}
+
+/* --- 3. PORTFOLIO SECTION (CSS Grid) --- */
+.portfolio-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(74, 63, 53, 0.04);
+    border: 1px solid rgba(197, 168, 128, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.portfolio-info {
+    padding: 25px;
+}
+
+.portfolio-info h3 {
+    margin-bottom: 10px;
+    color: #3d3229;
+}
+
+.portfolio-info p {
+    color: #706051;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(74, 63, 53, 0.1);
+}
+
+/* --- 4. GALLERY SECTION (Grid + Zoom + Shadow + Border Animation) --- */
+.gallery-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(74, 63, 53, 0.04);
+    background: #fff;
+    border: 3px solid transparent;
+    transition: border-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Hover, Zoom, Shadow & Border Effects combined */
+.gallery-item:hover {
+    border-color: #c5a880; /* Efek garis menyala emas hangat */
+    box-shadow: 0 12px 25px rgba(197, 168, 128, 0.3);
+    transform: scale(1.02);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.12);
+}
+
+/* --- 5. CONTACT SECTION (Flexbox) --- */
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-card {
+    background: #fff;
+    flex: 1;
+    min-width: 250px;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #4a3f35;
+    box-shadow: 0 4px 15px rgba(74, 63, 53, 0.03);
+    border: 1px solid rgba(197, 168, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-card .icon {
+    font-size: 2.5rem;
+    color: #c5a880; /* Ikon sewarna Champagne */
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.contact-card:hover {
+    background-color: #3d3229; /* Card berubah cokelat gelap elegan */
+    color: #fff;
+    transform: translateY(-5px);
+    border-color: #3d3229;
+}
+
+.contact-card:hover .icon {
+    color: #fff;
+    animation: pulse 1s infinite;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #211a14; /* Super Dark Chocolate untuk penutup kontras tinggi */
+    color: #f5f0e6;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 2px solid #c5a880;
+}
+
+.footer-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.footer-nim {
+    color: #c5a880; /* NIM berwarna emas */
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    color: #8c7d70;
+}
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+    }
+    
+    .nav-links li {
+        margin: 0 12px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.4rem;
+    }
+    
+    section {
+        padding-top: 160px;
+    }
+}
